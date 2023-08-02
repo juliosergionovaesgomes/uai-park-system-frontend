@@ -1,0 +1,21 @@
+<main class="form-signin w-100 m-auto">
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <div class="form-floating">
+      <input formControlName="email" type="email" class="form-control" placeholder="name@example.com" />
+      <label>Email address</label>
+    </div>
+    <div class="form-floating">
+      <input formControlName="password" type="password" class="form-control" placeholder="Password" />
+      <label>Password</label>
+    </div>
+    <div class="mb-3">
+      <a class="link" routerLink="/forgot" routerLinkActive="router-link-active">Forgot your password</a>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 py-2 mb-4">Enter</button>
+  </form>
+  <div class="d-flex justify-content-center ">
+    <asl-google-signin-button class="btn_google" shape="pill" theme="outline" type='standard'
+      size='large'></asl-google-signin-button>
+  </div>
+</main>

@@ -1,0 +1,22 @@
+<main class="form-signin w-100 m-auto">
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <h1 class="h3 mb-3 fw-normal">Redefinir a senha</h1>
+
+        <div class="form-floating">
+            <input formControlName="first_name" class="form-control" placeholder="First Name" />
+            <label>First Name</label>
+        </div>
+
+        <div class="form-floating">
+            <input formControlName="password" type="password" class="form-control" placeholder="Password" />
+            <label>Password</label>
+        </div>
+        <div class="form-floating">
+            <input formControlName="password_confirm" type="password" class="form-control"
+                placeholder="Password Confirm" />
+            <label>Password Confirm</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 py-2">Register</button>
+    </form>
+</main>

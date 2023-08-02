@@ -1,0 +1,12 @@
+<main class="form-signin w-100 m-auto">
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <h1 class="h3 mb-3 fw-normal">Please insert your authenticator code</h1>
+        <div class="form-floating">
+            <input formControlName="code" class="form-control" placeholder="6  digits code" />
+            <label>Email address</label>
+        </div>
+        <button type="submit" class=" w-100 btn btn-lg btn-primary  mt-3">Enter</button>
+    </form>
+
+    <img class="w-100" [src]="loginData.img" alt="qrcode" *ngIf="loginData.img">
+</main>

@@ -1,0 +1,13 @@
+<main class="form-signin w-100 m-auto">
+    <div *ngIf="cls" class="alert alert-{{cls}}" role="alert">
+        {{message}}
+    </div>
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <h1 class="h3 mb-3 fw-normal">Recupere a senha!</h1>
+        <div class="form-floating">
+            <input formControlName="email" type="email" class="form-control" placeholder="name@example.com" />
+            <label>Email address</label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 py-2 mt-3">Submit</button>
+    </form>
+</main>
