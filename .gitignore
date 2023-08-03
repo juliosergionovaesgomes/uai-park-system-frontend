@@ -6,10 +6,13 @@
 /out-tsc
 /bazel-out
 
+/.vscode
+.env
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+
 
 # IDEs and editors
 .idea/
@@ -20,12 +23,8 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
-# Angular
-/.angular
-
 # Visual Studio Code
 .vscode/*
-/.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json

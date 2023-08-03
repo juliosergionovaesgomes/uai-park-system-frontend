@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import 'dotenv/config';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -60,7 +60,9 @@ import { environment } from 'src/environments/environment.development';
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(environment.googleClientId),
+            provider: new GoogleLoginProvider(
+              process.env['GOOGLE_CLIENTID'] as string
+            ),
           },
         ],
       },
