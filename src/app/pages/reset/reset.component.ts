@@ -1,5 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ForgotService } from 'src/app/services/forgot.service';
@@ -8,6 +9,9 @@ import { ForgotService } from 'src/app/services/forgot.service';
   selector: 'app-reset',
   templateUrl: './reset.component.html',
   styleUrls: ['./reset.component.css'],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
+  providers: [ForgotService],
 })
 export class ResetComponent {
   form!: FormGroup;

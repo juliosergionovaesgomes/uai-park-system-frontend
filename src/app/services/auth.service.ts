@@ -3,14 +3,12 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   static authEmitter = new EventEmitter<boolean>();
-
-  accessToken!: string;
-
   constructor(private readonly http: HttpClient) {}
 
   register(body: any): Observable<any> {

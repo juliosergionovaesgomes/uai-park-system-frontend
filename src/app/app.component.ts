@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { LayoutComponent } from './layout/layout.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `<app-layout></app-layout>`,
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [LayoutComponent, CommonModule],
 })
 export class AppComponent {
-  title = 'uai-park-system-frontend';
+  // users$ = this.store.select(userSelector);
+  // constructor(private store: Store<UserState>) {}
 }

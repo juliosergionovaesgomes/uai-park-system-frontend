@@ -1,21 +1,34 @@
-<main class="form-signin w-100 m-auto">
-  <form [formGroup]="form" (submit)="onSubmit()">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-    <div class="form-floating">
-      <input formControlName="email" type="email" class="form-control" placeholder="name@example.com" />
-      <label>Email address</label>
+<form
+  class="w-[400px] py-8 mt-8  flex items-center justify-start flex-col border border-1 border-gray-100 rounded-md shadow-md"
+  [formGroup]="form" (ngSubmit)="onSubmit(model)">
+  <h1 class="text-4xl font-bold mb-4">
+    <strong class="text-primary ">Olá!</strong>
+    <span> Seja bem vindo!</span>
+  </h1>
+  <formly-form  class="w-2/3" [form]="form" [fields]="fields" [model]="model"></formly-form>
+
+  <div class="mb-8 flex w-2/3  items-center justify-between">
+    <div class="flex items-center space-x-1 justify-between flex-row flex-nowrap">
+      <input class="checked:bg-primary" type="checkbox">
+      <label class="text-gray-500 font-semibold">
+        <span class="text-xs">
+          Lembre-me!
+        </span>
+      </label>
     </div>
-    <div class="form-floating">
-      <input formControlName="password" type="password" class="form-control" placeholder="Password" />
-      <label>Password</label>
-    </div>
-    <div class="mb-3">
-      <a class="link" routerLink="/forgot" routerLinkActive="router-link-active">Forgot your password</a>
-    </div>
-    <button type="submit" class="btn btn-primary w-100 py-2 mb-4">Enter</button>
-  </form>
-  <div class="d-flex justify-content-center ">
-    <asl-google-signin-button class="btn_google" shape="pill" theme="outline" type='standard'
+    <a class="link" routerLink="/forgot" class="text-xs text-primary cursor-pointer"
+      routerLinkActive="router-link-active">Recuperar a
+      senha</a>
+  </div>
+  <button type="submit"
+    class="border px-24 rounded-full bg-primary text-white border-1 border-gray-100 w-100 py-2 mb-4 hover:scale-95">Entrar</button>
+  <div class="w-full flex items-center justify-center space-x-2">
+    <span class="w-24 h-[0.1px] bg-gray-100"></span>
+    <span class="text-primary text-xs font-semibold">ou</span>
+    <span class="w-24 h-[0.1px] bg-gray-100"></span>
+  </div>
+  <div class="d-flex  justify-content-center mt-4  hover:scale-95">
+    <asl-google-signin-button class="btn_google " shape="pill" theme="outline" type='standard'
       size='large'></asl-google-signin-button>
   </div>
-</main>
+</form>

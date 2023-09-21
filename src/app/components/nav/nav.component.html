@@ -1,21 +1,12 @@
-<header class="p-3 text-bg-dark">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-
-
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a routerLink="/" class="nav-link px-2 text-white">Home</a></li>
+<header class="w-full bg-primary h-16 flex items-center justify-center text-white px-4">
+    <div class="container flex flex-row items-center justify-between ">
+        <a  routerLink="/" class="text-2xl ml-4"> Web Platform </a>
+        <div class="">
+            <ul class="w-full flex cursor-pointer space-x-3">
+                <li><a routerLink="/login" class="" *ngIf="authenticate" (click)="logout()">Logout</a></li>
+                <li><a routerLink="/login" class="" *ngIf="!authenticate">Login</a></li>
+                <li><a routerLink="/register" *ngIf="!authenticate" class="">Register</a></li>
             </ul>
-
-
-            <div class="text-end" *ngIf="authenticate">
-                <a routerLink="/login" class="btn btn-outline-light me-2" (click)="logout()">Logout</a>
-            </div>
-
-            <div class="text-end" *ngIf="!authenticate">
-                <a routerLink="/login" class="btn btn-outline-light me-2">Login</a>
-                <a routerLink="/register" class="btn btn-outline-light me-2">Register</a>
-            </div>
         </div>
     </div>
 </header>

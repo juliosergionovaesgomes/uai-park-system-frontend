@@ -1,2 +1,12 @@
-<app-login-form (onLogin)="onLogin($event)" *ngIf="loginData.id === 0"></app-login-form>
-<app-authenticator [loginData]="loginData" *ngIf="loginData.id !== 0" ></app-authenticator>
+<main class="w-full  flex h-full overflowhidden items-center justify-center flex-wrap bg-white">
+
+    <!-- <section class="w-full h-full flex item-center justify-center hidden">
+        <h1>Web Full Stack - Platform Park</h1>
+    </section> -->
+    <section class="w-full h-full flex items-start justify-center">
+        <app-login-form (onLogin)="onLogin($event)" *ngIf="loginData.id === 0"></app-login-form>
+        <app-authenticator [loginData]="loginData" *ngIf="loginData.id !== 0"></app-authenticator>
+    </section>
+
+
+</main>

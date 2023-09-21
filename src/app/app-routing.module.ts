@@ -1,31 +1,33 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { ForgotComponent } from './pages/forgot/forgot.component';
-import { ResetComponent } from './pages/reset/reset.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'login',
-    component: LoginComponent,
+    loadComponent: () =>
+      import('./pages/login/login.component').then((m) => m.LoginComponent),
   },
   {
     path: 'register',
-    component: RegisterComponent,
+    loadComponent: () =>
+      import('./pages/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
   },
   {
     path: 'forgot',
-    component: ForgotComponent,
+    loadComponent: () =>
+      import('./pages/forgot/forgot.component').then((m) => m.ForgotComponent),
   },
   {
     path: 'reset/:token',
-    component: ResetComponent,
+    loadComponent: () =>
+      import('./pages/reset/reset.component').then((m) => m.ResetComponent),
   },
 ];
 
